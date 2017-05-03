@@ -10,9 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var tagModels: [JHTagModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        loadData()
+    }
+    
+    func loadData() {
+        for i in 0...10 {
+            let m = JHTagModel()
+            m.text = "No.\(i)"
+            m.font = UIFont.systemFont(ofSize: 12)
+            print(m.width)
+            tagModels.append(m)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

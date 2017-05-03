@@ -12,6 +12,7 @@
 		BBC49A5F1EB9868A0041A6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC49A5D1EB9868A0041A6CF /* Main.storyboard */; };
 		BBC49A611EB9868A0041A6CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC49A601EB9868A0041A6CF /* Assets.xcassets */; };
 		BBC49A641EB9868A0041A6CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC49A621EB9868A0041A6CF /* LaunchScreen.storyboard */; };
+		BBC49A6D1EB987E20041A6CF /* JHTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BBC49A601EB9868A0041A6CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC49A631EB9868A0041A6CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC49A651EB9868A0041A6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTagModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		BBC49A581EB9868A0041A6CF /* TagViewDemoForSwift */ = {
 			isa = PBXGroup;
 			children = (
+				BBC49A6B1EB987C80041A6CF /* JHTagView */,
 				BBC49A591EB9868A0041A6CF /* AppDelegate.swift */,
 				BBC49A5B1EB9868A0041A6CF /* ViewController.swift */,
 				BBC49A5D1EB9868A0041A6CF /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				BBC49A651EB9868A0041A6CF /* Info.plist */,
 			);
 			path = TagViewDemoForSwift;
+			sourceTree = "<group>";
+		};
+		BBC49A6B1EB987C80041A6CF /* JHTagView */ = {
+			isa = PBXGroup;
+			children = (
+				BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */,
+			);
+			path = JHTagView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBC49A5C1EB9868A0041A6CF /* ViewController.swift in Sources */,
+				BBC49A6D1EB987E20041A6CF /* JHTagModel.swift in Sources */,
 				BBC49A5A1EB9868A0041A6CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +315,7 @@
 				BBC49A6A1EB9868A0041A6CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
