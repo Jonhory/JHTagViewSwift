@@ -15,19 +15,45 @@ class ViewController: UIViewController {
     var tagModels: [JHTagModel] = []
     var tagView: JHTagView?
     
+    let changeBtn = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
         loadTagView()
+        loadBtn()
+    }
+    
+    func toChange() {
+        tagModels.removeAll()
+        loadData()
+        tagView?.removeFromSuperview()
+        loadTagView()
+    }
+    
+    func loadBtn() {
+        let f = CGRect(x: 0, y: SCREEN.height - 49, width: SCREEN.width, height: 49)
+        changeBtn.frame = f
+        changeBtn.setTitle("改变一下", for: .normal)
+        changeBtn.backgroundColor = .black
+        changeBtn.addTarget(self, action: #selector(toChange), for: .touchUpInside)
+        view.addSubview(changeBtn)
     }
     
     func loadData() {
-        for i in 0...10 {
+        for _ in 0...arc4random()%30 {
             let m = JHTagModel()
-            m.text = "No.\(i)"
+            var length = Int(arc4random()) % 10
+            length = length > 0 ? length : 1
+            m.text = getRandomStringOfLength(length: length)
             m.font = UIFont.systemFont(ofSize: 12)
-            print(m.width)
+            // 如果需要等宽的标签，只需要设置width属性即可
+//            m.width = 50
+            m.widthMargin = 10
+            m.heightMargin = 10
+            m.config(cornerRadius: 2, borderWidth: 0.5, normalBorderColor: .red, normalTitleColor: .randomColor, normalBackgroundColor: .white, selectTitleColor: .blue, selectBackgroundColor: .randomColor)
+            m.isAbleToSelect = true
             tagModels.append(m)
         }
     }
@@ -35,7 +61,8 @@ class ViewController: UIViewController {
     func loadTagView() {
         let f = CGRect(x: 0, y: 0, width: SCREEN.width - 100, height: 0)
         tagView = JHTagView(frame: f)
-        tagView?.backgroundColor = UIColor.randomColor
+        
+        tagView?.backgroundColor = .green
         tagView?.config(maxWidth: SCREEN.width - 100, horizontalMargin: 10, verticalMargin: 10)
         
         // 1.计算高度
@@ -44,8 +71,7 @@ class ViewController: UIViewController {
         tagView?.tagModels = tagModels
         // 3. 重置高度
         tagView?.frame = CGRect(x: 0, y: 0, width: SCREEN.width - 100, height: height!)
-        
-        print("高度====",height!)
+        tagView?.delegate = self
         
         tagView?.center = view.center
         view.addSubview(tagView!)
@@ -59,6 +85,11 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: JHTagViewDelegate {
+    func jh_tagViewClicked(model: JHTagModel, isSelected: Bool) {
+        print("点击了\(model.text!), 当前是否选中:\(isSelected)")
+    }
+}
 
 extension UIColor {
     //返回随机颜色
@@ -70,4 +101,22 @@ extension UIColor {
             return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
         }
     }
+}
+
+/**
+ 生成随机字符串,
+ 
+ - parameter length: 生成的字符串的长度
+ 
+ - returns: 随机生成的字符串
+ */
+func getRandomStringOfLength(length: Int) -> String {
+    var ranStr = ""
+    let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    
+    for _ in 0..<length {
+        let index = Int(arc4random_uniform(UInt32(characters.characters.count)))
+        ranStr.append(characters[characters.index(characters.startIndex, offsetBy: index)])
+    }
+    return ranStr
 }
