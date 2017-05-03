@@ -13,6 +13,8 @@
 		BBC49A611EB9868A0041A6CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC49A601EB9868A0041A6CF /* Assets.xcassets */; };
 		BBC49A641EB9868A0041A6CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC49A621EB9868A0041A6CF /* LaunchScreen.storyboard */; };
 		BBC49A6D1EB987E20041A6CF /* JHTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */; };
+		BBD01A2B1EB9AB7C0002144C /* JHTagSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD01A2A1EB9AB7C0002144C /* JHTagSingleView.swift */; };
+		BBD01A2D1EB9AEEB0002144C /* JHTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD01A2C1EB9AEEB0002144C /* JHTagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BBC49A631EB9868A0041A6CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBC49A651EB9868A0041A6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTagModel.swift; sourceTree = "<group>"; };
+		BBD01A2A1EB9AB7C0002144C /* JHTagSingleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTagSingleView.swift; sourceTree = "<group>"; };
+		BBD01A2C1EB9AEEB0002144C /* JHTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				BBC49A6C1EB987E20041A6CF /* JHTagModel.swift */,
+				BBD01A2C1EB9AEEB0002144C /* JHTagView.swift */,
+				BBD01A2A1EB9AB7C0002144C /* JHTagSingleView.swift */,
 			);
 			path = JHTagView;
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 				BBC49A5C1EB9868A0041A6CF /* ViewController.swift in Sources */,
 				BBC49A6D1EB987E20041A6CF /* JHTagModel.swift in Sources */,
 				BBC49A5A1EB9868A0041A6CF /* AppDelegate.swift in Sources */,
+				BBD01A2D1EB9AEEB0002144C /* JHTagView.swift in Sources */,
+				BBD01A2B1EB9AB7C0002144C /* JHTagSingleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

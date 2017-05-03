@@ -23,7 +23,7 @@ class JHTagModel {
     // 样式
     public var type: JHTagViewType = .normal
     // 是否选中
-    public var isSelect: Bool = false
+    public var isSelected: Bool = false
     // 字体
     public var font: UIFont? {
         didSet {
