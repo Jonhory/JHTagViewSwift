@@ -90,6 +90,16 @@ class JHTagModel {
     // 选中背景颜色
     public var selectBackgroundColor: UIColor = UIColor.purple
     
+    /// 快速配置样式
+    ///
+    /// - Parameters:
+    ///   - cornerRadius: 圆角
+    ///   - borderWidth: 边线宽
+    ///   - normalBorderColor: 普通状态边线颜色
+    ///   - normalTitleColor: 普通状态文字颜色
+    ///   - normalBackgroundColor: 普通状态背景颜色
+    ///   - selectTitleColor: 选中状态文字颜色
+    ///   - selectBackgroundColor: 选中状态背景颜色
     public func config(cornerRadius: CGFloat, borderWidth: CGFloat, normalBorderColor: UIColor, normalTitleColor: UIColor, normalBackgroundColor: UIColor, selectTitleColor: UIColor, selectBackgroundColor: UIColor) {
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth

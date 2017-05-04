@@ -26,7 +26,9 @@ class JHTagView: UIView {
         }
     }
     
+    // 标签水平间距
     private var horizontalMargin: CGFloat = 0
+    // 标签垂直间距
     private var verticalMargin: CGFloat = 0
     
     private var singleViews: [JHTagSingleView] = []
@@ -96,6 +98,13 @@ class JHTagView: UIView {
         frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: height)
     }
     
+    
+    /// 快速配置
+    ///
+    /// - Parameters:
+    ///   - maxWidth: 视图最大宽度
+    ///   - horizontalMargin: 标签水平间距
+    ///   - verticalMargin: 标签垂直间距
     public func config(maxWidth: CGFloat, horizontalMargin: CGFloat, verticalMargin: CGFloat) {
         self.maxWidth = maxWidth
         self.horizontalMargin = horizontalMargin
