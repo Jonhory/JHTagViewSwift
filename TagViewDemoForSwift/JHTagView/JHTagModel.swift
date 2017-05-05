@@ -80,15 +80,15 @@ class JHTagModel {
     private var myBorderWidth: CGFloat = 0.5
     
     // 普通边框颜色
-    public var normalBorderColor: UIColor = UIColor.black
+    public var normalBorderColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
     // 普通状态文字颜色
-    public var normalTitleColor: UIColor = UIColor.gray
+    public var normalTitleColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
     // 普通背景颜色
-    public var normalBackgroundColor: UIColor = UIColor.red
+    public var normalBackgroundColor: UIColor = UIColor.white
     // 选中状态文字颜色
-    public var selectTitleColor: UIColor = UIColor.blue
+    public var selectTitleColor: UIColor = UIColor.white
     // 选中背景颜色
-    public var selectBackgroundColor: UIColor = UIColor.purple
+    public var selectBackgroundColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
     
     /// 快速配置样式
     ///

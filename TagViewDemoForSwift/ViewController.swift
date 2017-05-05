@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 //            m.width = 50
             m.widthMargin = 10
             m.heightMargin = 10
-            m.config(cornerRadius: 2, borderWidth: 0.5, normalBorderColor: .red, normalTitleColor: .randomColor, normalBackgroundColor: .white, selectTitleColor: .blue, selectBackgroundColor: .randomColor)
+//            m.config(cornerRadius: 2, borderWidth: 0.5, normalBorderColor: .red, normalTitleColor: .randomColor, normalBackgroundColor: .white, selectTitleColor: .blue, selectBackgroundColor: .randomColor)
             m.isAbleToSelect = true
             tagModels.append(m)
         }
