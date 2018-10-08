@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         loadBtn()
     }
     
-    func toChange() {
+    @objc func toChange() {
         tagModels.removeAll()
         loadData()
         tagView?.removeFromSuperview()

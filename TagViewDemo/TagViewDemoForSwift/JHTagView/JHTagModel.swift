@@ -27,7 +27,7 @@ class JHTagModel {
     /// 字体
     public var font: UIFont? {
         didSet {
-            size = text?.size(attributes: [NSFontAttributeName: font ?? UIFont.systemFont(ofSize: 17)])
+            size = text?.size(withAttributes: [NSAttributedStringKey.font : font ?? UIFont.systemFont(ofSize: 17)])
         }
     }
     /// 视图尺寸

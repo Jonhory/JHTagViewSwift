@@ -39,7 +39,7 @@ class JHTagSingleView: UIView {
         handleBtnIsSelected(tagBtn)
     }
     
-    func tagBtnClicked(_ btn: UIButton) {
+    @objc func tagBtnClicked(_ btn: UIButton) {
         if model == nil { return }
         
         if model!.isAbleToSelect {
