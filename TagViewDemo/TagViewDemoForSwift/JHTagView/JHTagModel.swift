@@ -18,21 +18,21 @@ enum JHTagViewType {
 }
 
 class JHTagModel {
-    // 文字
+    /// 文字
     public var text: String?
-    // 样式
+    /// 样式
     public var type: JHTagViewType = .normal
-    // 是否选中
+    /// 是否选中
     public var isSelected: Bool = false
-    // 字体
+    /// 字体
     public var font: UIFont? {
         didSet {
             size = text?.size(attributes: [NSFontAttributeName: font ?? UIFont.systemFont(ofSize: 17)])
         }
     }
-    // 视图尺寸
+    /// 视图尺寸
     public var size: CGSize?
-    // 视图宽度
+    /// 视图宽度
     public var width: CGFloat {
         set { myWidth = newValue }
         get {
@@ -48,7 +48,7 @@ class JHTagModel {
     }
     private var myWidth: CGFloat = 0
     
-    // 视图高度
+    /// 视图高度
     public var height: CGFloat {
         set { myHeight = newValue }
         get {
@@ -64,30 +64,32 @@ class JHTagModel {
     }
     private var myHeight: CGFloat = 0
     
-    // 视图宽度增量
+    /// 视图宽度增量
     public var widthMargin: CGFloat = 0
-    // 视图高度增量
+    /// 视图高度增量
     public var heightMargin: CGFloat = 0
-    // 是否点击后设为选中,不管该值YES or NO,代理事件都能被响应
+    /// 是否点击后设为选中,不管该值YES or NO,代理事件都能被响应
     public var isAbleToSelect: Bool = false
-    // 圆角
+    /// 圆角
     public var cornerRadius: CGFloat = 0
-    // 边线宽
+    /// 边线宽
     public var borderWidth: CGFloat {
         set { myBorderWidth = newValue }
         get { return myBorderWidth }
     }
     private var myBorderWidth: CGFloat = 0.5
     
-    // 普通边框颜色
+    /// 普通边框颜色
     public var normalBorderColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
-    // 普通状态文字颜色
+    /// 普通状态文字颜色
     public var normalTitleColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
-    // 普通背景颜色
-    public var normalBackgroundColor: UIColor = UIColor.white
-    // 选中状态文字颜色
-    public var selectTitleColor: UIColor = UIColor.white
-    // 选中背景颜色
+    /// 普通背景颜色
+    public var normalBackgroundColor: UIColor = .white
+    /// 选中状态文字颜色
+    public var selectTitleColor: UIColor = .white
+    /// 选中状态边线颜色，默认为透明
+    public var selectBorderColor: UIColor = .clear
+    /// 选中背景颜色
     public var selectBackgroundColor: UIColor = UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
     
     /// 快速配置样式
@@ -100,7 +102,8 @@ class JHTagModel {
     ///   - normalBackgroundColor: 普通状态背景颜色
     ///   - selectTitleColor: 选中状态文字颜色
     ///   - selectBackgroundColor: 选中状态背景颜色
-    public func config(cornerRadius: CGFloat, borderWidth: CGFloat, normalBorderColor: UIColor, normalTitleColor: UIColor, normalBackgroundColor: UIColor, selectTitleColor: UIColor, selectBackgroundColor: UIColor) {
+    ///   - selectBorderColor: 选中状态边线颜色，默认为透明
+    public func config(cornerRadius: CGFloat, borderWidth: CGFloat, normalBorderColor: UIColor, normalTitleColor: UIColor, normalBackgroundColor: UIColor, selectTitleColor: UIColor, selectBackgroundColor: UIColor, selectBorderColor: UIColor = .clear) {
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth
         self.normalBorderColor = normalBorderColor
@@ -108,6 +111,7 @@ class JHTagModel {
         self.normalBackgroundColor = normalBackgroundColor
         self.selectTitleColor = selectTitleColor
         self.selectBackgroundColor = selectBackgroundColor
+        self.selectBorderColor = selectBorderColor
     }
     
     

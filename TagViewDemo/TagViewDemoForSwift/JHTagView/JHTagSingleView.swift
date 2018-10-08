@@ -44,6 +44,7 @@ class JHTagSingleView: UIView {
         
         if model!.isAbleToSelect {
             btn.isSelected = !btn.isSelected
+            model!.isSelected = !model!.isSelected
             handleBtnIsSelected(btn)
         }
         delegate?.jh_tagSingleViewClicked(model: model!, isSelected: btn.isSelected)
@@ -52,11 +53,10 @@ class JHTagSingleView: UIView {
     private func handleBtnIsSelected(_ btn: UIButton) {
         if btn.isSelected {
             btn.backgroundColor = model?.selectBackgroundColor
-            btn.layer.borderWidth = 0
+            btn.layer.borderColor = model?.selectBorderColor.cgColor
         } else {
             btn.backgroundColor = model?.normalBackgroundColor
             btn.layer.borderColor = model?.normalBorderColor.cgColor
-            btn.layer.borderWidth = model?.borderWidth ?? 0.5
         }
     }
     

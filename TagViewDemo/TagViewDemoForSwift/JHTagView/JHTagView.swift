@@ -8,27 +8,26 @@
 
 import UIKit
 
-protocol JHTagViewDelegate: class {
+protocol JHTagViewDelegate {
     
     func jh_tagViewClicked(model: JHTagModel, isSelected: Bool)
-    
 }
 
 class JHTagView: UIView {
 
     var delegate: JHTagViewDelegate?
-    // 最大宽度
+    /// 最大宽度
     public var maxWidth: CGFloat = 0.0
-    // 数据源
+    /// 数据源
     public var tagModels: [JHTagModel] = [] {
         didSet {
             setModels()
         }
     }
     
-    // 标签水平间距
+    /// 标签水平间距
     private var horizontalMargin: CGFloat = 0
-    // 标签垂直间距
+    /// 标签垂直间距
     private var verticalMargin: CGFloat = 0
     
     private var singleViews: [JHTagSingleView] = []
@@ -98,6 +97,15 @@ class JHTagView: UIView {
         frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: height)
     }
     
+    public func getSelectedModels() -> [JHTagModel] {
+        var selectedModels: [JHTagModel] = []
+        for m in tagModels {
+            if m.isSelected {
+                selectedModels.append(m)
+            }
+        }
+        return selectedModels
+    }
     
     /// 快速配置
     ///

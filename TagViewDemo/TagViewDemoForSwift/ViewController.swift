@@ -49,10 +49,10 @@ class ViewController: UIViewController {
             m.text = getRandomStringOfLength(length: length)
             m.font = UIFont.systemFont(ofSize: 12)
             // 如果需要等宽的标签，只需要设置width属性即可
-//            m.width = 50
+            m.width = 70
             m.widthMargin = 10
             m.heightMargin = 10
-//            m.config(cornerRadius: 2, borderWidth: 0.5, normalBorderColor: .red, normalTitleColor: .randomColor, normalBackgroundColor: .white, selectTitleColor: .blue, selectBackgroundColor: .randomColor)
+            m.config(cornerRadius: 5, borderWidth: 1, normalBorderColor: .gray, normalTitleColor: .gray, normalBackgroundColor: .white, selectTitleColor: .orange, selectBackgroundColor: .white, selectBorderColor: .orange)
             m.isAbleToSelect = true
             tagModels.append(m)
         }
@@ -82,6 +82,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("当前共选中 \(tagView!.getSelectedModels().count) 个数据")
+    }
 
 }
 
@@ -89,6 +92,7 @@ extension ViewController: JHTagViewDelegate {
     func jh_tagViewClicked(model: JHTagModel, isSelected: Bool) {
         print("点击了\(model.text!), 当前是否选中:\(isSelected)")
     }
+    
 }
 
 extension UIColor {
