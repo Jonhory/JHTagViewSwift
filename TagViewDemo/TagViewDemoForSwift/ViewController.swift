@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     func loadBtn() {
-        let f = CGRect(x: 0, y: SCREEN.height - 49, width: SCREEN.width, height: 49)
+        let f = CGRect(x: 0, y: SCREEN.height - 88 - 10, width: SCREEN.width, height: 49)
         changeBtn.frame = f
         changeBtn.setTitle("改变一下", for: .normal)
         changeBtn.backgroundColor = .black
@@ -44,12 +44,12 @@ class ViewController: UIViewController {
     func loadData() {
         for _ in 0...arc4random()%30 {
             let m = JHTagModel()
-            var length = Int(arc4random()) % 10
+            var length = Int(arc4random()) % 100
             length = length > 0 ? length : 1
             m.text = getRandomStringOfLength(length: length)
             m.font = UIFont.systemFont(ofSize: 12)
             // 如果需要等宽的标签，只需要设置width属性即可
-            m.width = 70
+//            m.width = 70
             m.widthMargin = 10
             m.heightMargin = 10
             m.config(cornerRadius: 5, borderWidth: 1, normalBorderColor: .gray, normalTitleColor: .gray, normalBackgroundColor: .white, selectTitleColor: .orange, selectBackgroundColor: .white, selectBorderColor: .orange)

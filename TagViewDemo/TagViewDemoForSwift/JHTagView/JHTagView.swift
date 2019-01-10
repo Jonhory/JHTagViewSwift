@@ -53,7 +53,11 @@ class JHTagView: UIView {
         for i in 0..<models.count {
             let model = models[i]
             
-            let sframe = CGRect(x: totalWidth, y: totalHeight, width: model.width, height: model.height)
+            var tempWidth = model.width
+            if tempWidth + totalWidth >= maxWidth {
+                tempWidth = maxWidth - totalWidth - 1
+            }
+            let sframe = CGRect(x: totalWidth, y: totalHeight, width: tempWidth, height: model.height)
             
             let singleView = JHTagSingleView(frame: sframe)
             singleView.model = model
